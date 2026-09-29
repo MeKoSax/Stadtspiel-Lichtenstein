@@ -413,8 +413,10 @@ document.querySelector("#start-cta").addEventListener("click", () => {
 
 // „Weiter"-Button auf der Schloss-Seite
 document.querySelector("#schloss-weiter").addEventListener("click", () => {
-  document.querySelector("#schloss-photos").classList.remove("hidden");
+  const challenge = document.querySelector("#schloss-challenge");
+  challenge.classList.remove("hidden");
   document.querySelector("#schloss-weiter").classList.add("hidden");
+  challenge.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
 // Klick auf „Kulturpalais" im Header springt zur Startseite
@@ -529,7 +531,7 @@ document.querySelector("#check-start").addEventListener("click", () => {
         <div class="geo-card"></div>
         <div class="story-grid"><img class="feature-image" src="assets/neumarkt-doener.webp" alt="Ein Döner als duftende Spur"><div><p class="lead">Während du auf dem Neumarkt stehst und alle Sinne benutzt, steigt dir ein betörender Duft in die Nase. Eine Person läuft an dir vorbei mit einem Döner in der Hand. In der Ferne erblickst du eine Werbetafel.</p><img class="feature-image" src="assets/memos-aussen.webp" alt="Werbetafel von Memo’s Döner-Eck"><p>Dein Hunger treibt dich genau dorthin. Gehe zu „Memo’s Döner-Eck“.</p></div></div>
         <div class="story-grid"><div><p class="lead">Hungrig betrittst du den Laden. Doch heute gibt es dort nichts zu essen. Der Besitzer arbeitet an einer vergoldeten Ritterrüstung.</p><details open><summary>Mehr über Memo’s</summary><p>Memo’s Döner-Eck ist ein bekannter Imbiss in Lichtenstein mit sehr leckeren türkischen Spezialitäten und Steinofenpizza. Er ist schon seit 1999 in Lichtenstein zuhause.</p></details></div><img class="feature-image" src="assets/memos-tresen.webp" alt="Tresen in Memo’s Döner-Eck"></div>
-        <div class="challenge-block"><img class="feature-image" src="assets/memos-ruestung.webp" alt="Vergoldete Ritterrüstung, der ein Teil fehlt"><h3>Was fehlt an der Rüstung?</h3><label class="text-answer">Deine Antwort<input id="armor-answer" autocomplete="off" placeholder="Zum Beispiel: Helm"></label><button class="primary-button" id="check-armor" type="button">Lösung prüfen</button><p class="feedback" id="armor-feedback" role="alert"></p><p>Da du immer noch hungrig bist, folgst du diesem Hinweis und gehst zum Goldenen Helm.</p></div>`;
+        <div class="challenge-block"><img class="feature-image" src="assets/memos-ruestung.webp" alt="Vergoldete Ritterrüstung, der ein Teil fehlt"><h3>Was fehlt an der Rüstung?</h3><label class="text-answer">Deine Antwort<input id="armor-answer" autocomplete="off" placeholder="Deine Antwort"></label><button class="primary-button" id="check-armor" type="button">Lösung prüfen</button><p class="feedback" id="armor-feedback" role="alert"></p><p>Da du immer noch hungrig bist, folgst du diesem Hinweis und gehst zum Goldenen Helm.</p></div>`;
       document.querySelector("#check-armor").addEventListener("click", () => {
         const answer = document.querySelector("#armor-answer");
         const feedback = document.querySelector("#armor-feedback");
@@ -552,7 +554,7 @@ document.querySelector("#check-start").addEventListener("click", () => {
         <div class="geo-card"></div>
         <div class="story-grid"><img class="feature-image" src="assets/neumarkt-ranzen.webp" alt="Verlassener Schulranzen auf dem Neumarkt"><div><p class="lead">Während du dich auf dem Neumarkt umschaust, fällt dir etwas auf. Du siehst einen verlassenen Schulranzen. An der Seite ist ein Namensschild. Auf dem Schild steht „Karl Max Schneider“.</p><p>Du bringst ihn zum Prof. Dr. Max Schneider Gymnasium.</p></div></div>
         <div class="story-grid"><div><details open><summary>Mehr über das Gymnasium</summary><p>Das Prof. Dr. Max Schneider Gymnasium ist nach Karl Max Schneider (13.03.1887–26.10.1955) benannt. Er war Zoologe und ehemaliger Direktor des Leipziger Zoos.</p><p>Das Karl Max Schneider Gymnasium wurde 1992 gegründet. Die Gebäude allerdings sind über 100 beziehungsweise 160 Jahre alt. Mit zwei Schulgebäuden und Außenanlagen ist das Gymnasium über 30.000 m² groß.</p></details><video controls playsinline preload="metadata" poster="assets/gymnasium-front.webp"><source src="assets/gymnasium.mp4" type="video/mp4"><p>Das Video kann auf diesem Gerät nicht abgespielt werden.</p></video></div><img class="feature-image" src="assets/gymnasium-front.webp" alt="Frontansicht des Prof. Dr. Max Schneider Gymnasiums"></div>
-        <div class="challenge-block"><div class="branch-gallery"><img src="assets/gymnasium-sekretariat.webp" alt="Sekretariat des Gymnasiums"><img src="assets/gymnasium-vitrine.webp" alt="Schulgang mit einer Vitrine"></div><p>Du betrittst das Schulgebäude und gehst in das Sekretariat. Im Sekretariat gibst du den Schulranzen ab. Dort ist man sehr dankbar für deine Hilfe. Du willst die Schule gerade wieder verlassen, da fällt dir einer der Pokale in der Vitrine auf.</p><h3>Das ist kein Pokal …</h3><p>Es ist ein goldener Helm. Wie passend, denn dein Magen knurrt ganz böse. Also folgst du diesem Hinweis und gehst zum Goldenen Helm.</p><button class="primary-button" type="button" id="gym-to-helm">Zum Goldenen Helm</button></div>`;
+        <div class="challenge-block"><p>Du betrittst das Schulgebäude und gehst in das Sekretariat. Im Sekretariat gibst du den Schulranzen ab. Dort ist man sehr dankbar für deine Hilfe. Du willst die Schule gerade wieder verlassen, da fällt dir einer der Pokale in der Vitrine auf.</p><img class="feature-image" src="assets/gymnasium-vitrine.webp" alt="Schulgang des Gymnasiums mit einer Vitrine und dem goldenen Helm"><h3>Das ist kein Pokal …</h3><p>Es ist ein goldener Helm. Wie passend, denn dein Magen knurrt ganz böse. Also folgst du diesem Hinweis und gehst zum Goldenen Helm.</p><button class="primary-button" type="button" id="gym-to-helm">Zum Goldenen Helm</button></div>`;
       document.querySelector("#gym-to-helm").addEventListener("click", () => go(7));
     }
     enhanceZoomableImages();
@@ -621,7 +623,7 @@ document.querySelector("#check-start").addEventListener("click", () => {
   }
 
   function enhanceZoomableImages() {
-    document.querySelectorAll(".photo-stack img, .feature-image, .park-bank-image, .branch-gallery img, .cinema-hero img, .reveal-card > img").forEach((image) => {
+    document.querySelectorAll(".photo-stack img, .feature-image, .wide-image, .park-bank-image, .branch-gallery img, .cinema-hero img, .reveal-card > img").forEach((image) => {
       if (image.dataset.zoomReady) return;
       image.dataset.zoomReady = "true";
       image.classList.add("zoomable-image");
@@ -670,7 +672,7 @@ document.querySelector("#check-start").addEventListener("click", () => {
     document.querySelector("#park-riddle").classList.add("hidden");
     document.querySelector("#start-cta").classList.remove("hidden");
     document.querySelector("#schloss-weiter").classList.remove("hidden");
-    document.querySelector("#schloss-photos").classList.add("hidden");
+    document.querySelector("#schloss-challenge").classList.add("hidden");
     startQuiz.classList.add("hidden");
     teamPanel.classList.toggle("hidden", Boolean(team));
     modePanel.classList.remove("hidden");

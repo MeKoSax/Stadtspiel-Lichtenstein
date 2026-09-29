@@ -7,7 +7,7 @@
   <meta name="description" content="Das interaktive Stadtspiel durch Lichtenstein: Löse Rätsel und finde die verschwundene Prinzessin.">
   <title>Die verschwundene Prinzessin · Stadtspiel Lichtenstein</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='14' width='64' height='64' fill='%23471b30'/%3E%3Cpath d='M14 21l9 8 9-15 9 15 9-8-4 25H18z' fill='%23f1c453'/%3E%3Crect x='17' y='48' width='30' height='5' rx='2.5' fill='%23f1c453'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=10">
+  <link rel="stylesheet" href="styles.css?v=11">
 </head>
 <body>
   <a class="skip-link" href="#spiel">Zum Spiel springen</a>
@@ -101,7 +101,7 @@
           </button>
           <button class="mode-card" type="button" data-mode="desktop">
             <span class="mode-icon" aria-hidden="true">⌂</span>
-            <b>Am PC testen</b>
+            <b>Offline spielen</b>
             <span>Alle Stationen ohne Standortfreigabe erleben.</span>
           </button>
         </div>
@@ -152,13 +152,13 @@
           </details>
           <button class="primary-button" id="schloss-weiter" type="button">Weiter</button>
         </div>
-        <div class="photo-stack hidden" id="schloss-photos">
+        <div class="photo-stack" id="schloss-photos">
           <img src="assets/schloss-1.webp" alt="Schloss Lichtenstein von außen">
           <img src="assets/schloss-2.webp" alt="Die Schlossstufen in Lichtenstein">
           <img src="assets/schloss-3.webp" alt="Informationstafel am Schloss">
         </div>
       </div>
-      <div class="challenge-block">
+      <div class="challenge-block hidden" id="schloss-challenge">
         <p class="eyebrow">Versteckter Hinweis</p>
         <h3>Findest du den kleinen Zettel?</h3>
         <p>Tippe im Bild auf den weißen Zettel in der Steinwand.</p>
@@ -194,14 +194,14 @@
         <ul class="riddle-list">
           <li>Zeile 1 · Wort 1 · Buchstabe 1</li>
           <li>Zeile 1 · Wort 2 · Buchstabe 1</li>
-          <li>Zeile 1 · Wort 2 · Buchstabe 5</li>
-          <li>Zeile 3 · Wort 1 · Buchstabe 1</li>
+          <li>Zeile 2 · Wort 2 · Buchstabe 6</li>
+          <li>Zeile 3 · Wort 7 · Buchstabe 1</li>
           <li>Zeile 5 · Wort 3 · Buchstabe 4</li>
           <li>Zeile 6 · Wort 2 · Buchstabe 3</li>
           <li>Zeile 7 · Wort 2 · Buchstabe 10</li>
           <li>Zeile 8 · Wort 2 · Buchstabe 2</li>
         </ul>
-        <p class="riddle-code" aria-label="Rätselcode">1·1·1 · 1·2·1 · 1·2·5 · 3·1·1 · 5·3·4 · 6·2·3 · 7·2·10 · 8·2·2</p>
+        <p class="riddle-code" aria-label="Rätselcode">1·1·1 · 1·2·1 · 2·2·6 · 3·7·1 · 5·3·4 · 6·2·3 · 7·2·10 · 8·2·2</p>
 
         <label class="text-answer">Welcher Ort ist gesucht?<input id="schloss-answer" autocomplete="off" placeholder="Lösungswort"></label>
         <button class="primary-button" type="button" data-check-text="schloss-answer" data-solution="altmarkt" data-success-stage="2">Lösung prüfen</button>
@@ -217,7 +217,7 @@
         <img class="feature-image parchment-image" src="assets/altmarkt-brief.webp" alt="Brief des alten Nachtwächters über den Altmarkt">
         <div>
           <p class="story-callout"><b>Du hast einen Brief vom alten Nachtwächter erhalten.</b></p>
-          <p class="lead">„Den Altmarkt, ja den kenn ich wohl. Zu meiner Zeit war da immer was los, ein stetes Kommen und Gehen. Da konntest du frisches Brot kaufen, Fleisch, Obst – alles, was das Herz begehrt. Händler riefen ihre Waren aus, Kinder rannten umher, und manchmal spielte gar ein Musikant auf seiner Fiedel.</p>
+          <p class="lead">„Den Altmarkt, ja den kenn ich wohl. Zu meiner Zeit war da immer was los, ein stetes Kommen und Gehen. Da konntest du frisches Brot kaufen, Fleisch, Obst – alles, was das Herz begehrt. Händler riefen ihre Waren aus, Kinder rannten umher und manchmal spielte gar ein Musikant auf seiner Fiedel.</p>
           <p>Vielleicht hat man deine Prinzessin dort gesehen, wer weiß das schon? Wenn du mich fragst – geh mal hin und schau dich um. Dort erfährt man so manches, was andernorts im Dunkeln bleibt."</p>
         </div>
       </div>
@@ -291,7 +291,7 @@
             <p>16 = P · 1 = A · 18 = R · 11 = K → Daraus ergibt sich ein Wort mit 4 Buchstaben. Es ist ein Teil der Stadt, in dem man spazieren gehen kann.</p>
           </details>
 
-          <label class="text-answer">Wie lautet das Lösungswort?<input id="park-answer" autocomplete="off" placeholder="Stadtpark"></label>
+          <label class="text-answer">Wie lautet das Lösungswort?<input id="park-answer" autocomplete="off" placeholder="Lösungswort"></label>
           <button class="primary-button" type="button" data-check-text="park-answer" data-solution="stadtpark|park" data-success-stage="4">Lösung prüfen</button>
           <p class="feedback" id="park-answer-feedback" role="alert"></p>
         </div>
@@ -315,7 +315,7 @@
       <div class="reveal-card hidden" id="park-scene">
         <h3>Plötzlich kommt ein Radfahrer!</h3>
         <p>Du stehst von der Parkbank auf, als plötzlich ein Radfahrer angefahren kommt.</p>
-        <video controls playsinline preload="metadata" poster="assets/park-1.jpg"><source src="assets/stadtpark.mp4" type="video/mp4"><p>Das Video kann auf diesem Gerät nicht abgespielt werden. Die Geschichte geht darunter weiter.</p></video>
+        <video controls playsinline preload="auto" aria-label="Video: Ein Radfahrer kommt im Stadtpark angefahren"><source src="assets/stadtpark.mp4" type="video/mp4"><p>Das Video kann auf diesem Gerät nicht abgespielt werden. Die Geschichte geht darunter weiter.</p></video>
         <p>Du möchtest dem verletzten Radfahrer helfen und begleitest ihn ins nahegelegene Krankenhaus. Gerade als du aus dem Krankenhaus herauskommst, klingelt dein Handy. Eine unbekannte Nummer ruft an.</p>
         <audio controls preload="metadata" src="assets/anruf-neumarkt.mp3"></audio>
         <p>Du folgst dem Hinweis und gehst zum Neumarkt.</p>
@@ -361,7 +361,10 @@
           <p>Der Name „Goldener Helm“ steht eventuell in Zusammenhang mit dem Wappen der Schönburger. Im früheren Wappen des zu Lichtenstein gehörenden Stadtteils Callnberg war ein Spangenhelm mit Grafenkrone abgebildet. Das erklärt aber nicht sicher, warum gerade dieses Gasthaus so genannt wurde.</p>
           <p>Leider wurde das Hotel geschlossen. Vor mehr als zehn Jahren wurde das Gebäude aufwendig saniert und Anfang 2015 als Senioren- und Pflegeeinrichtung neu eröffnet.</p>
         </details>
-        <figure class="asset-placeholder"><span aria-hidden="true">♜</span><figcaption>Ein Gebäudefoto vom „Goldenen Helm“ wird ergänzt, sobald die angekündigte Bilddatei vorliegt.</figcaption></figure>
+        <figure class="location-photo">
+          <img class="wide-image" src="assets/goldener-helm-2026.jpg" alt="Das frühere Hotel Goldener Helm in Lichtenstein im Jahr 2026">
+          <figcaption>Das Gebäude des früheren Hotels „Goldener Helm“ in Lichtenstein.</figcaption>
+        </figure>
         <p>Etwas zu essen bekommst du hier leider nicht. Glücklicherweise musst du dich nur umdrehen, über die Straße und links um die Ecke gehen – dort steht das Restaurant Athos.</p>
         <button class="primary-button" type="button" data-go="8">Weiter zum Restaurant Athos</button>
       </div>
@@ -417,6 +420,6 @@
     <img id="image-dialog-picture" alt="">
     <p id="image-dialog-caption"></p>
   </dialog>
-  <script src="app.js?v=8"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>
