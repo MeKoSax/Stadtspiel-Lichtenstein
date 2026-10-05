@@ -139,6 +139,8 @@ legend { width: 100%; margin-bottom: 14px; font-weight: 600; font-size: clamp(1.
 .geo-button { flex: 0 0 auto; padding: 10px 14px; border: 1px solid var(--wine); border-radius: 999px; color: var(--wine); background: transparent; font-family: Arial, sans-serif; font-size: .78rem; font-weight: 800; }
 
 .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; margin-bottom: 44px; }
+.letter-block { width: min(780px, 100%); margin: 0 auto 44px; }
+.letter-block .story-callout { margin-bottom: 18px; }
 .story-panel, .final-story { max-width: 780px; margin: 0 auto; padding: clamp(24px, 4vw, 46px); border: 1px solid var(--line); border-radius: var(--radius); background: white; box-shadow: var(--shadow); }
 .feature-image, .wide-image { width: 100%; max-height: 620px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
 .wide-image { max-height: 680px; margin-bottom: 38px; }

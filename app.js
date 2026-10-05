@@ -80,6 +80,9 @@
     progressCount.textContent = `${target} / 9`;
     progressBar.style.width = `${(target / 9) * 100}%`;
     if (target === 6) renderBranch();
+    if (target === 7) {
+      document.querySelector("#helm-direction")?.classList.toggle("hidden", state.branch !== "memos");
+    }
     renderGeo(stages[target]);
     if (!options.keepScroll) window.scrollTo({ top: 0, behavior: "smooth" });
     if (team && !options.remote) syncTeamState();
@@ -531,7 +534,7 @@ document.querySelector("#check-start").addEventListener("click", () => {
         <div class="geo-card"></div>
         <div class="story-grid"><img class="feature-image" src="assets/neumarkt-doener.webp" alt="Ein Döner als duftende Spur"><div><p class="lead">Während du auf dem Neumarkt stehst und alle Sinne benutzt, steigt dir ein betörender Duft in die Nase. Eine Person läuft an dir vorbei mit einem Döner in der Hand. In der Ferne erblickst du eine Werbetafel.</p><img class="feature-image" src="assets/memos-aussen.webp" alt="Werbetafel von Memo’s Döner-Eck"><p>Dein Hunger treibt dich genau dorthin. Gehe zu „Memo’s Döner-Eck“.</p></div></div>
         <div class="story-grid"><div><p class="lead">Hungrig betrittst du den Laden. Doch heute gibt es dort nichts zu essen. Der Besitzer arbeitet an einer vergoldeten Ritterrüstung.</p><details open><summary>Mehr über Memo’s</summary><p>Memo’s Döner-Eck ist ein bekannter Imbiss in Lichtenstein mit sehr leckeren türkischen Spezialitäten und Steinofenpizza. Er ist schon seit 1999 in Lichtenstein zuhause.</p></details></div><img class="feature-image" src="assets/memos-tresen.webp" alt="Tresen in Memo’s Döner-Eck"></div>
-        <div class="challenge-block"><img class="feature-image" src="assets/memos-ruestung.webp" alt="Vergoldete Ritterrüstung, der ein Teil fehlt"><h3>Was fehlt an der Rüstung?</h3><label class="text-answer">Deine Antwort<input id="armor-answer" autocomplete="off" placeholder="Deine Antwort"></label><button class="primary-button" id="check-armor" type="button">Lösung prüfen</button><p class="feedback" id="armor-feedback" role="alert"></p><p>Da du immer noch hungrig bist, folgst du diesem Hinweis und gehst zum Goldenen Helm.</p></div>`;
+        <div class="challenge-block"><img class="feature-image" src="assets/memos-ruestung.webp" alt="Vergoldete Ritterrüstung, der ein Teil fehlt"><h3>Was fehlt an der Rüstung?</h3><label class="text-answer">Deine Antwort<input id="armor-answer" autocomplete="off" placeholder="Deine Antwort"></label><button class="primary-button" id="check-armor" type="button">Lösung prüfen</button><p class="feedback" id="armor-feedback" role="alert"></p></div>`;
       document.querySelector("#check-armor").addEventListener("click", () => {
         const answer = document.querySelector("#armor-answer");
         const feedback = document.querySelector("#armor-feedback");

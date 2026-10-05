@@ -7,7 +7,7 @@
   <meta name="description" content="Das interaktive Stadtspiel durch Lichtenstein: Löse Rätsel und finde die verschwundene Prinzessin.">
   <title>Die verschwundene Prinzessin · Stadtspiel Lichtenstein</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect rx='14' width='64' height='64' fill='%23471b30'/%3E%3Cpath d='M14 21l9 8 9-15 9 15 9-8-4 25H18z' fill='%23f1c453'/%3E%3Crect x='17' y='48' width='30' height='5' rx='2.5' fill='%23f1c453'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css?v=11">
+  <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
   <a class="skip-link" href="#spiel">Zum Spiel springen</a>
@@ -213,13 +213,9 @@
     <section class="stage" data-stage="2" data-place="Altmarkt" data-lat="50.75608" data-lon="12.63462" aria-labelledby="title-altmarkt">
       <div class="stage-head"><div><p class="eyebrow">Station 2</p><h2 id="title-altmarkt">Altmarkt</h2></div><span class="stage-glyph" aria-hidden="true">♙</span></div>
       <div class="geo-card"></div>
-      <div class="story-grid">
+      <div class="letter-block">
+        <p class="story-callout"><b>Du hast einen Brief vom alten Nachtwächter erhalten:</b></p>
         <img class="feature-image parchment-image" src="assets/altmarkt-brief.webp" alt="Brief des alten Nachtwächters über den Altmarkt">
-        <div>
-          <p class="story-callout"><b>Du hast einen Brief vom alten Nachtwächter erhalten.</b></p>
-          <p class="lead">„Den Altmarkt, ja den kenn ich wohl. Zu meiner Zeit war da immer was los, ein stetes Kommen und Gehen. Da konntest du frisches Brot kaufen, Fleisch, Obst – alles, was das Herz begehrt. Händler riefen ihre Waren aus, Kinder rannten umher und manchmal spielte gar ein Musikant auf seiner Fiedel.</p>
-          <p>Vielleicht hat man deine Prinzessin dort gesehen, wer weiß das schon? Wenn du mich fragst – geh mal hin und schau dich um. Dort erfährt man so manches, was andernorts im Dunkeln bleibt."</p>
-        </div>
       </div>
       <p class="audio-intro"><b>Tauche ein in die Welt von früher:</b> Höre dir den Markttrubel an und erfahre etwas über den Pranger.</p>
       <div class="audio-grid">
@@ -355,6 +351,7 @@
       <div class="stage-head"><div><p class="eyebrow">Station 7</p><h2 id="title-helm">Goldener Helm</h2></div><span class="stage-glyph" aria-hidden="true">♢</span></div>
       <div class="geo-card"></div>
       <div class="story-panel">
+        <p class="lead hidden" id="helm-direction">Gehe zum Goldenen Helm.</p>
         <p class="lead">Oh nein … der Magen muss weiter knurren. Hier ist gar kein Hotel!</p>
         <details open><summary>Mehr Infos zum „Goldenen Helm“</summary>
           <p>Das Hotel „Goldener Helm“ in Lichtenstein/Sachsen war früher ein Gasthof beziehungsweise Gast- und Logierhaus. Es diente also nicht nur als Übernachtungsbetrieb, sondern auch als Gaststätte für die örtliche Bevölkerung und Reisende.</p>
@@ -420,6 +417,6 @@
     <img id="image-dialog-picture" alt="">
     <p id="image-dialog-caption"></p>
   </dialog>
-  <script src="app.js?v=10"></script>
+  <script src="app.js?v=11"></script>
 </body>
 </html>
